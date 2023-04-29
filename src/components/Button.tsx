@@ -2,49 +2,46 @@
 
 import styled from '@emotion/styled';
 import MQ from "@constants/media_queries";
+import { pulse } from '@constants/keyframes';
 
 const Button = styled.button`
-
     background-color: #fff;
     border: 1px solid #000;
-    border-radius: 4px;
+    border-radius: 9999px;
     color: #000;
     font-size: 1rem;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.5rem;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     transition: all 0.2s ease-in-out;
 
+    &:focus,
     &:hover {
-        background-color: #000;
-        color: #fff;
+        color: rgba(255, 0, 0, 0.8);
+        
     }
 
-    &:focus {
-        outline: 1px solid red;
+    &:active {
+        animation: ${pulse} 500ms ease;
     }
 
     ${MQ[0]} {
-        font-size: 1.5rem;
         color: blue;
     }
 
     ${MQ[1]} {
-        font-size: 2rem;
-        color: red;
+        color: green;
     }
 
     ${MQ[2]} {
-        font-size: 2rem;
-        color: yellow;
+        color: orange;
     }
 
     ${MQ[3]} {
-        font-size: 2rem;
         color: pink;
     }
 
     ${MQ[4]} {
-        font-size: 2rem;
         color: black;
     }
 `;
