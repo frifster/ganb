@@ -1,6 +1,7 @@
 "use client";
 
 import styled from '@emotion/styled';
+import MQ from "@constants/media_queries";
 
 const Button = styled.button`
 
@@ -18,6 +19,34 @@ const Button = styled.button`
         color: #fff;
     }
 
+    &:focus {
+        outline: 1px solid red;
+    }
+
+    ${MQ[0]} {
+        font-size: 1.5rem;
+        color: blue;
+    }
+
+    ${MQ[1]} {
+        font-size: 2rem;
+        color: red;
+    }
+
+    ${MQ[2]} {
+        font-size: 2rem;
+        color: yellow;
+    }
+
+    ${MQ[3]} {
+        font-size: 2rem;
+        color: pink;
+    }
+
+    ${MQ[4]} {
+        font-size: 2rem;
+        color: black;
+    }
 `;
 
 export default Button;
