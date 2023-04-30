@@ -23,6 +23,18 @@ const ROUTES = {
     NAME: "Home",
     PATH: "/",
   },
+  CAREERS: {
+    NAME: "Careers",
+    PATH: "/careers",
+  },
+  ABOUT_US: {
+    NAME: "Who Are We?",
+    PATH: "/about",
+  },
+  FEEDBACK: {
+    NAME: "Feedback",
+    PATH: "/feedback",
+  },
 };
 
 export default ROUTES;

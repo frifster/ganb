@@ -11,9 +11,9 @@ import TikTok from '@assets/svgs/socials/tiktok.svg';
 type Props = {}
 
 const FOOTER_ROUTES = [
-    { ...ROUTES.MENU },
-    { ...ROUTES.LOCATIONS },
-    { ...ROUTES.REACH_US }
+    { ...ROUTES.ABOUT_US },
+    { ...ROUTES.CAREERS },
+    { ...ROUTES.FEEDBACK }
 ]
 
 const FB_LINK = 'https://www.facebook.com/grindandblend';

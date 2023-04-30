@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 import Logo from '@assets/svgs/logo.svg';
 import ROUTES from '@constants/routes';
-import { grind } from '@constants/keyframes';
 
 type Props = {}
 
