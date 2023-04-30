@@ -70,6 +70,7 @@ const NavMenuItem = styled.div`
     letter-spacing: 1px;
     color: var(--accent-color);
     position: relative;
+    white-space: nowrap;
 
     &:hover {
         &:after {

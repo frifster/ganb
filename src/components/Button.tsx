@@ -7,7 +7,6 @@ import { pulse } from '@constants/keyframes';
 
 const Button = styled.button`
     background-color: var(--accent-color-2);
-    border: 1px solid #000;
     border-radius: 9999px;
     color: #000;
     font-size: 1rem;
