@@ -1,22 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --primary-color: #fffff0;
+  --primary-color-rgb: 255, 255, 240;
+
+  --secondary-color: #d2b493;
+  --secondary-color-rgb: 210, 180, 147;
+
+  --accent-color: #2d0e02;
+  --accent-color-rgb: 45, 14, 2;
+
+  --accent-color-2: #b78d6c;
+  --accent-color-2-rgb: 183, 141, 108;
+
+  --font-family: "Playfair Display", serif;
 }
 
 * {
   box-sizing: border-box;
+  font-family: "Playfair Display", serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: var(--secondary-color-rgb);
+    --background-end-rgb: var(--primary-color-rgb);
   }
 }
 
@@ -28,4 +44,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+  background-repeat: no-repeat;
 }
