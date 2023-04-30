@@ -106,7 +106,7 @@ const FeaturedDrinks = styled.div`
   max-width: 879px;
 `
 
-const SubTexts = styled.p`
+const SubTexts = styled.div`
   text-align: center;
   margin-bottom: 71px;
 `

@@ -1,3 +1,4 @@
+import Head from "next/head"
 import { Analytics } from '@vercel/analytics/react';
 import NavBar from '@components/Layout/NavBar'
 import './globals.css'
@@ -18,6 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
       <body className={inter.className}>
         <Analytics />
         <NavBar />
