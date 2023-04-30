@@ -58,7 +58,7 @@ const StyledNavBar = styled.nav`
 
 const NavMenu = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     gap: 31px;
 `
