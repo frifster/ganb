@@ -6,6 +6,9 @@ import DarkChoco from "@assets/svgs/products/darkchoco.svg";
 import Mocha from "@assets/svgs/products/mocha.svg";
 import WhiteChoco from "@assets/svgs/products/whitechoco.svg";
 import Button from '@components/Button';
+import Link from 'next/link';
+
+const GRIND_AND_BLEND_MESSENGER_URL = "https://www.messenger.com/t/103865975799079";
 
 export default function Home() {
   return (
@@ -34,7 +37,9 @@ export default function Home() {
                 <h6>White Choco</h6>
               </Drink>
             </Drinks>
-            <Button>Order now!</Button>
+            <Button>
+              <Link href={GRIND_AND_BLEND_MESSENGER_URL} target='_blank'>Order now!</Link>
+            </Button>
           </Card>
         </FeaturedDrinks>
       </Content>
