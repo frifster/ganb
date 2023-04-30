@@ -77,7 +77,7 @@ export default function Home() {
 }
 
 const StyledMain = styled.main`
-  padding: 54px 0 0 0;
+  padding: 146px 0 0 0;
 
   h1 {
     font-size: 100px;

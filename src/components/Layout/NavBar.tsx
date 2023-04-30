@@ -45,6 +45,7 @@ const NavBar = (props: Props) => {
 
 
 const StyledNavBar = styled.nav`
+    position: fixed;
     display: grid;
     background-color: var(--secondary-color);
     width: 100%;
