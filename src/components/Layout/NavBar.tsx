@@ -44,12 +44,13 @@ const NavBar = (props: Props) => {
 
 const StyledNavBar = styled.nav`
     display: grid;
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     width: 100dvw;
     height: 91px;
     padding: 25px 6dvw;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(var(--accent-color-rgb), 0.45);
 
     img {
         align-self: center;
@@ -65,9 +66,23 @@ const NavMenu = styled.div`
 
 const NavMenuItem = styled.div`
     font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    position: relative;
 
     &:hover {
-        color: var(--secondary-color);
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 80%;
+            left: 10%;
+            height: 4px;
+            margin: 0 auto;
+            background-color: var(--accent-color);
+            border-radius: 99px;
+        }
     }
 `
 

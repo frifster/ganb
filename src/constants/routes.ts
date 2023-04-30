@@ -5,7 +5,7 @@ const ROUTES = {
   },
   ORDER_ONLINE: {
     NAME: "Order Online",
-    PATH: "/order-online",
+    PATH: "/order",
   },
   REWARDS: {
     NAME: "Rewards",
