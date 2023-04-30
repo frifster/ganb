@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/react';
 import NavBar from '@components/Layout/NavBar'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Footer from '@components/Layout/Footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         <Analytics />
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   )
