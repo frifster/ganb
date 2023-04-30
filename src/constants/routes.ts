@@ -28,7 +28,7 @@ const ROUTES = {
     PATH: "/careers",
   },
   ABOUT_US: {
-    NAME: "Who Are We?",
+    NAME: "About Us",
     PATH: "/about",
   },
   FEEDBACK: {
