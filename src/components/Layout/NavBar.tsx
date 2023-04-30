@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import Logo from '@assets/svgs/logo.svg';
 import ROUTES from '@constants/routes';
+import { grind } from '@constants/keyframes';
 
 type Props = {}
 
@@ -21,9 +22,11 @@ const NavBar = (props: Props) => {
 
     return (
         <StyledNavBar>
-            <Link href={ROUTES.HOME.PATH}>
+            <Link href={ROUTES.HOME.PATH} className='home-logo'>
                 <Image priority src={Logo} alt="Grind and Blend Logo" />
+                <h1>Grind & Blend</h1>
             </Link>
+
 
             <NavMenu>
                 {
@@ -52,8 +55,20 @@ const StyledNavBar = styled.nav`
     justify-content: space-between;
     box-shadow: 0px 4px 4px rgba(var(--accent-color-rgb), 0.45);
 
-    img {
-        align-self: center;
+    a.home-logo {
+        display: flex;
+        position: relative;
+        img {
+            align-self: center;
+        }
+        h1 {
+            font-size: 32px;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-left: 10px;
+            white-space: nowrap;
+            font-weight: 700;
+        }
     }
 `
 

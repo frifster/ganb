@@ -2,7 +2,6 @@
 
 import styled from '@emotion/styled';
 import { pulse } from '@constants/keyframes';
-// import MQ from "@constants/media_queries";
 
 
 const Button = styled.button`
