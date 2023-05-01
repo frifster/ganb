@@ -26,12 +26,10 @@ const NavBar = (props: Props) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleOverlayClick = () => {
-        console.log("Overlay Clicked")
         setIsMenuOpen(false);
     }
 
     const handleBurgerClick = () => {
-        console.log("Burger Clicked")
         setIsMenuOpen(true);
     }
 
