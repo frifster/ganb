@@ -11,7 +11,7 @@ import WhiteChoco from "@assets/svgs/products/whitechoco.svg";
 import Ham from "@assets/svgs/products/ham.svg";
 import Bacon from "@assets/svgs/products/bacon.svg";
 
-import Button from '@components/Button';
+import Button from '@components/Shared/Button';
 
 const GRIND_AND_BLEND_MESSENGER_URL = "https://www.messenger.com/t/103865975799079";
 
