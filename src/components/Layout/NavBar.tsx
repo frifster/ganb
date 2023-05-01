@@ -10,6 +10,7 @@ import Burger from '@assets/svgs/burger.svg';
 
 import ROUTES from '@constants/routes';
 import MQ from '@constants/media_queries';
+import { NAV_FONT_SIZE, underlineStyles } from '@constants/styles';
 
 type Props = {}
 
@@ -146,60 +147,17 @@ const DesktopNavMenu = styled.div({
 })
 
 const DesktopNavItem = styled.div({
-    fontSize: '18px',
+    fontSize: NAV_FONT_SIZE,
     fontWeight: 800,
     letterSpacing: '1px',
     color: 'var(--accent-color)',
     position: 'relative',
     whiteSpace: 'nowrap',
+    "--color": 'var(--accent-color)',
 
     '&:hover': {
-        '&:after': {
-            content: '""',
-            position: 'absolute',
-            display: 'block',
-            width: '80%',
-            left: '10%',
-            height: '4px',
-            margin: '0 auto',
-            backgroundColor: 'var(--accent-color)',
-            borderRadius: '99px',
-        }
+        '&:after': underlineStyles
     },
-
-    [MQ[1]]: {
-        fontSize: '16px',
-
-        '&:hover': {
-            '&:after': {
-                height: '3px',
-            }
-        },
-    },
-
-    [MQ[2]]: {
-        fontSize: '14px',
-
-        '&:hover': {
-            '&:after': {
-                height: '3px',
-            }
-        },
-    },
-
-
-    [MQ[5]]: {
-        fontSize: '12px',
-        letterSpacing: '0.5px',
-
-
-        '&:hover': {
-            '&:after': {
-                height: '2px',
-            }
-        },
-    }
-
 })
 
 
@@ -257,7 +215,7 @@ const Overlay = styled.div({
 })
 
 const MobileNavItem = styled.div({
-    fontSize: '16px',
+    fontSize: NAV_FONT_SIZE,
     fontWeight: 800,
     letterSpacing: '1px',
     color: 'var(--accent-color)',

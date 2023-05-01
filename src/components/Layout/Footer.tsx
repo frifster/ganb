@@ -7,8 +7,7 @@ import Link from 'next/link';
 import FB from '@assets/svgs/socials/fb.svg';
 import Instagram from '@assets/svgs/socials/instagram.svg';
 import TikTok from '@assets/svgs/socials/tiktok.svg';
-
-type Props = {}
+import { NAV_FONT_SIZE, underlineStyles } from '@constants/styles';
 
 const FOOTER_ROUTES = [
     { ...ROUTES.ABOUT_US },
@@ -74,34 +73,26 @@ const Socials = styled.div({
     alignSelf: 'center'
 })
 
-const FooterMenu = styled.div`
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 31px;
-`
+const FooterMenu = styled.div({
+    display: 'flex',
+    justifyContent: 'end',
+    alignItems: 'center',
+    gap: '2dvw',
+})
 
-const FooterMenuItem = styled.div`
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: var(--secondary-color);
-    position: relative;
-    white-space: nowrap;
+const FooterMenuItem = styled.div({
+    fontSize: NAV_FONT_SIZE,
+    fontWeight: 800,
+    letterSpacing: '1px',
+    color: 'var(--secondary-color)',
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    cursor: 'pointer',
+    "--color": 'var(--secondary-color)',
 
-    &:hover {
-        &:after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 80%;
-            left: 10%;
-            height: 4px;
-            margin: 0 auto;
-            background-color: var(--secondary-color);
-            border-radius: 99px;
-        }
+    "&:hover": {
+        "&:after": underlineStyles
     }
-`
+})
 
 export default Footer
