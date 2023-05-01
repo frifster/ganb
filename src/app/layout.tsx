@@ -1,4 +1,3 @@
-import { ReactNode } from "react"
 import Head from "next/head"
 import { Analytics } from '@vercel/analytics/react';
 import NavBar from '@components/Layout/NavBar'
