@@ -17,4 +17,14 @@ export const productNameStyles = css({
   fontWeight: "bold",
 });
 
+export const orderLinkStyles = css({
+  display: "block",
+  width: "100%",
+  height: "auto",
+  maxWidth: "300px",
+  justifySelf: "center",
+  maxHeight: "40px",
+  margin: "53px auto 23px auto",
+});
+
 export const NAV_FONT_SIZE = "clamp(12px, 1.5dvmin, 18px)";

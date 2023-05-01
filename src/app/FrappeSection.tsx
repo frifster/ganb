@@ -10,7 +10,7 @@ import WhiteChoco from "@assets/svgs/products/whitechoco.svg";
 
 import Button from '@components/Shared/Button';
 import Card from '@components/Shared/Card';
-import { productNameStyles } from '@constants/styles';
+import { orderLinkStyles, productNameStyles } from '@constants/styles';
 import MQ from '@constants/media_queries';
 
 const GRIND_AND_BLEND_MESSENGER_URL = "https://www.messenger.com/t/103865975799079";
@@ -97,16 +97,7 @@ const Content = styled.div({
 
 const FeaturedDrinks = styled.div({
   maxWidth: "879px",
-
-  ".order-link": {
-    display: 'block',
-    width: '100%',
-    height: 'auto',
-    maxWidth: '300px',
-    justifySelf: 'center',
-    maxHeight: '40px',
-    margin: "53px auto 23px auto"
-  }
+  ".order-link": orderLinkStyles
 })
 
 const SubTexts = styled.div({
