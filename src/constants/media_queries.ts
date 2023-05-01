@@ -1,19 +1,12 @@
-const small_mobile_breakpoint = 375;
-const mobile_breakpoint = 576;
-const tablet_breakpoint = 768;
-const desktop_breakpoint = 992;
-const medium_desktop_breakpoint = 1200;
-const large_desktop_breakpoint = 1440;
-const extra_large_desktop_breakpoint = 1920;
-
 const BREAK_POINTS = [
-  small_mobile_breakpoint,
-  mobile_breakpoint,
-  tablet_breakpoint,
-  desktop_breakpoint,
-  medium_desktop_breakpoint,
-  large_desktop_breakpoint,
-  extra_large_desktop_breakpoint,
+  1920, // 0
+  1440, // 1
+  1280, // 2
+  1024, // 3
+  992, // 4
+  768, // 5
+  600, // 6
+  375, // 7
 ];
 
-export default BREAK_POINTS.map((bp) => `@media (min-width: ${bp}px)`);
+export default BREAK_POINTS.map((bp) => `@media (max-width: ${bp}px)`);
