@@ -133,6 +133,14 @@ const StyledNavBar = styled.nav({
         },
     },
 
+    [MQ[7]]: {
+        "a.home-logo": {
+            h1: {
+                fontSize: '16px',
+            }
+        },
+    },
+
 })
 
 const DesktopNavMenu = styled.div({

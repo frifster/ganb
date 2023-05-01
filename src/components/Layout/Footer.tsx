@@ -8,6 +8,7 @@ import FB from '@assets/svgs/socials/fb.svg';
 import Instagram from '@assets/svgs/socials/instagram.svg';
 import TikTok from '@assets/svgs/socials/tiktok.svg';
 import { NAV_FONT_SIZE, underlineStyles } from '@constants/styles';
+import MQ from '@constants/media_queries';
 
 const FOOTER_ROUTES = [
     { ...ROUTES.ABOUT_US },
@@ -58,19 +59,34 @@ const StyledFooter = styled.footer({
     gridTemplateColumns: '1fr 1fr',
     justifyContent: 'space-between',
     boxShadow: '0px -4px 4px rgba(var(--accent-color-rgb), 0.45)',
-    display: 'grid'
+    display: 'grid',
 
+    [MQ[6]]: {
+        height: "auto",
+        gridTemplateColumns: '1fr',
+        padding: '2dvh 6dvw',
+        gap: '2dvh',
+    }
 })
 
 const Socials = styled.div({
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
-    gap: '2dvw',
+    gap: '6dvmin',
     maxWidth: '200px',
     cursor: 'pointer',
     alignContent: 'center',
-    justifyItems: 'center',
-    alignSelf: 'center'
+    justifyItems: 'space-between',
+    img: {
+        height: 'clamp(20px, 2dvh, 60px)',
+        width: "auto",
+    },
+
+    [MQ[6]]: {
+        justifySelf: 'center',
+        paddingBottom: '2dvh',
+        borderBottom: '1px dashed var(--secondary-color)',
+    }
 })
 
 const FooterMenu = styled.div({
@@ -78,6 +94,10 @@ const FooterMenu = styled.div({
     justifyContent: 'end',
     alignItems: 'center',
     gap: '2dvw',
+
+    [MQ[6]]: {
+        justifySelf: 'center',
+    }
 })
 
 const FooterMenuItem = styled.div({

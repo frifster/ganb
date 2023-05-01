@@ -1,5 +1,6 @@
 "use client";
 import styled from "@emotion/styled"
+import MQ from '@constants/media_queries';
 
 interface ContainerProps {
     children: React.ReactNode
@@ -10,6 +11,10 @@ const LayoutContainer = (props: ContainerProps) => {
     )
 }
 const StyledDiv = styled.div({
-    minHeight: '94dvh',
+    minHeight: '92dvh',
+
+    [MQ[7]]: {
+        minHeight: '86dvh',
+    },
 })
 export default LayoutContainer

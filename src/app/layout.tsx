@@ -1,10 +1,11 @@
 import Head from "next/head"
 import { Analytics } from '@vercel/analytics/react';
 import NavBar from '@components/Layout/NavBar'
-import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@components/Layout/Footer';
 import LayoutContainer from "@components/Layout/LayoutContainer";
+
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
