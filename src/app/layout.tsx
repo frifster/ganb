@@ -1,12 +1,11 @@
-"use client";
-
+import { ReactNode } from "react"
 import Head from "next/head"
-import styled from "@emotion/styled"
 import { Analytics } from '@vercel/analytics/react';
 import NavBar from '@components/Layout/NavBar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@components/Layout/Footer';
+import LayoutContainer from "@components/Layout/LayoutContainer";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,11 +14,11 @@ export const metadata = {
   description: 'Grind and Blend website',
 }
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode
-}) {
+}
+
+export default function RootLayout(props: RootLayoutProps) {
   return (
     <html lang="en">
       <Head>
@@ -28,15 +27,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <Analytics />
         <NavBar />
-        <Container>
-          {children}
-        </Container>
+        <LayoutContainer>
+          {props.children}
+        </LayoutContainer>
         <Footer />
       </body>
     </html>
   )
 }
-
-const Container = styled.div({
-  minHeight: '94dvh',
-})
