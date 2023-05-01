@@ -13,8 +13,9 @@ const Button = styled.button`
     padding: 0.3rem 0.5rem;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     width: 100%;
-    max-width: 333px;
+    max-width: 300px;
     text-transform: uppercase;
+    height: 40px;
 
     &:hover {
         background-color: var(--accent-color);

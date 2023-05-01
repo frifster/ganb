@@ -2,7 +2,7 @@
 import styled from '@emotion/styled';
 
 interface CardProps {
-    tranparent?: boolean;
+  tranparent?: boolean;
 }
 
 const Card = styled.div<CardProps>`
@@ -11,10 +11,6 @@ const Card = styled.div<CardProps>`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 30px;
-  
-    button {
-      margin: 53px auto 23px auto;
-    }
   `
 
 export default Card;
