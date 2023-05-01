@@ -7,7 +7,7 @@ import Link from 'next/link';
 import FB from '@assets/svgs/socials/fb.svg';
 import Instagram from '@assets/svgs/socials/instagram.svg';
 import TikTok from '@assets/svgs/socials/tiktok.svg';
-import { NAV_FONT_SIZE, underlineStyles } from '@constants/styles';
+import { NAV_FONT_SIZE, underlineStyles, underlineStylesActive } from '@constants/styles';
 import MQ from '@constants/media_queries';
 
 const FOOTER_ROUTES = [
@@ -72,7 +72,7 @@ const StyledFooter = styled.footer({
 const Socials = styled.div({
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
-    gap: '6dvmin',
+    gap: '30px',
     maxWidth: '200px',
     cursor: 'pointer',
     alignContent: 'center',
@@ -110,9 +110,11 @@ const FooterMenuItem = styled.div({
     cursor: 'pointer',
     "--color": 'var(--secondary-color)',
 
-    "&:hover": {
-        "&:after": underlineStyles
-    }
+    '&:after': underlineStyles,
+
+    '&:hover': {
+        '&:after': underlineStylesActive
+    },
 })
 
 export default Footer

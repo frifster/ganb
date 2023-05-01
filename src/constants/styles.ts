@@ -9,6 +9,14 @@ export const underlineStyles = css({
   margin: "0 auto",
   backgroundColor: "var(--color)",
   borderRadius: "99px",
+  transformOrigin: "right",
+  transform: "scaleX(0)",
+  transition: "transform 0.3s ease-in-out",
+});
+
+export const underlineStylesActive = css({
+  transform: "scaleX(1)",
+  transformOrigin: "left",
 });
 
 export const productNameStyles = css({

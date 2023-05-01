@@ -10,7 +10,7 @@ import Burger from '@assets/svgs/burger.svg';
 
 import ROUTES from '@constants/routes';
 import MQ from '@constants/media_queries';
-import { NAV_FONT_SIZE, underlineStyles } from '@constants/styles';
+import { NAV_FONT_SIZE, underlineStyles, underlineStylesActive } from '@constants/styles';
 
 type Props = {}
 
@@ -163,8 +163,10 @@ const DesktopNavItem = styled.div({
     whiteSpace: 'nowrap',
     "--color": 'var(--accent-color)',
 
+    '&:after': underlineStyles,
+
     '&:hover': {
-        '&:after': underlineStyles
+        '&:after': underlineStylesActive
     },
 })
 
