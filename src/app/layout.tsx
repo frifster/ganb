@@ -1,4 +1,7 @@
+"use client";
+
 import Head from "next/head"
+import styled from "@emotion/styled"
 import { Analytics } from '@vercel/analytics/react';
 import NavBar from '@components/Layout/NavBar'
 import './globals.css'
@@ -25,9 +28,15 @@ export default function RootLayout({
       <body className={inter.className}>
         <Analytics />
         <NavBar />
-        {children}
+        <Container>
+          {children}
+        </Container>
         <Footer />
       </body>
     </html>
   )
 }
+
+const Container = styled.div({
+  minHeight: '94dvh',
+})

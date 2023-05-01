@@ -59,22 +59,20 @@ const StyledFooter = styled.footer({
     gridTemplateColumns: '1fr 1fr',
     justifyContent: 'space-between',
     boxShadow: '0px -4px 4px rgba(var(--accent-color-rgb), 0.45)',
-    position: 'absolute',
-    bottom: 0,
-    zIndex: 999,
     display: 'grid'
 
 })
 
-const Socials = styled.div`
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    max-width: 200px;
-    cursor: pointer;
-    align-content: center;
-    justify-items: center;
-`
+const Socials = styled.div({
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr',
+    gap: '2dvw',
+    maxWidth: '200px',
+    cursor: 'pointer',
+    alignContent: 'center',
+    justifyItems: 'center',
+    alignSelf: 'center'
+})
 
 const FooterMenu = styled.div`
     display: flex;
