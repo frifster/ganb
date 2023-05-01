@@ -35,10 +35,7 @@ const NavBar = (props: Props) => {
 
     return (
         <StyledNavBar>
-            <Link href={ROUTES.HOME.PATH} className='home-logo'>
-                <Image priority src={Logo} alt="Grind and Blend Logo" />
-                <h1>Grind & Blend</h1>
-            </Link>
+
 
 
             <DesktopNavMenu>
@@ -70,6 +67,11 @@ const NavBar = (props: Props) => {
                 </MobileNavMenu>
             </BurgerMenu>
 
+            <Link href={ROUTES.HOME.PATH} className='home-logo'>
+                <Image priority src={Logo} alt="Grind and Blend Logo" />
+                <h1>Grind & Blend</h1>
+            </Link>
+
         </StyledNavBar>
     )
 }
@@ -90,6 +92,7 @@ const StyledNavBar = styled.nav({
     "a.home-logo": {
         display: 'flex',
         position: 'relative',
+        justifySelf: 'end',
         img: {
             height: 'clamp(20px, 2dvh, 60px)',
             alignSelf: 'center',
@@ -133,7 +136,7 @@ const StyledNavBar = styled.nav({
 
 const DesktopNavMenu = styled.div({
     display: 'flex',
-    justifyContent: 'end',
+    justifyContent: 'start',
     alignItems: 'center',
     gap: '2dvw',
 
@@ -203,7 +206,7 @@ const DesktopNavItem = styled.div({
 const BurgerMenu = styled.div({
     display: 'none',
     alignSelf: 'center',
-    justifySelf: 'end',
+    justifySelf: 'start',
     cursor: 'pointer',
 
     [MQ[6]]: {

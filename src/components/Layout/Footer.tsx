@@ -21,7 +21,7 @@ const INSTAGRAM_LINK = "https://www.instagram.com/grindandblend/";
 const TIKTOK_LINK = "https://www.tiktok.com/@grindandblend?lang=en";
 
 
-const Footer = (props: Props) => {
+const Footer = () => {
     return (
         <StyledFooter>
             <Socials>
@@ -51,16 +51,20 @@ const Footer = (props: Props) => {
     )
 }
 
-const StyledFooter = styled.footer`
-    display: grid;
-    background-color: var(--accent-color);
-    width: 100%;
-    height: 91px;
-    padding: 25px 6dvw;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-    box-shadow: 0px 4px 4px rgba(var(--accent-color-rgb), 0.45);
-`
+const StyledFooter = styled.footer({
+    backgroundColor: 'var(--accent-color)',
+    width: '100%',
+    height: "clamp(60px, 6dvh, 91px)",
+    padding: '0 6dvw',
+    gridTemplateColumns: '1fr 1fr',
+    justifyContent: 'space-between',
+    boxShadow: '0px -4px 4px rgba(var(--accent-color-rgb), 0.45)',
+    position: 'absolute',
+    bottom: 0,
+    zIndex: 999,
+    display: 'grid'
+
+})
 
 const Socials = styled.div`
     display: grid; 
