@@ -1,7 +1,8 @@
 import Head from "next/head"
 import { Analytics } from '@vercel/analytics/react';
-import NavBar from '@components/Layout/NavBar'
 import { Inter } from 'next/font/google'
+
+import NavBar from '@components/Layout/NavBar'
 import Footer from '@components/Layout/Footer';
 import LayoutContainer from "@components/Layout/LayoutContainer";
 
@@ -19,6 +20,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout(props: RootLayoutProps) {
+
   return (
     <html lang="en">
       <Head>

@@ -2,6 +2,7 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useScroll, motion, useTransform } from "framer-motion";
 
 import DummyDrink from "@assets/svgs/dummy_drink.svg";
 import DarkChoco from "@assets/svgs/products/darkchoco.svg";
@@ -16,43 +17,49 @@ import MQ from '@constants/media_queries';
 const GRIND_AND_BLEND_MESSENGER_URL = "https://www.messenger.com/t/103865975799079";
 
 const FrappeSection = () => {
+  const { scrollYProgress } = useScroll()
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
+  const backgroundColor = useTransform(scrollYProgress, [0, 1], ['rgba(245, 222, 179,0)', 'rgba(245, 222, 179,1)'])
   return (
-    <StyledSection>
-      <h1>Taste The Difference</h1>
-      <Content>
-        <Image src={DummyDrink} priority alt="Frappe Drink" className="main-img" />
-        <FeaturedDrinks>
-          <SubTexts>
-            <p>We believe that great coffee starts with great ingredients. </p>
-            <p>That&apos;s why we use only the finest, locally sourced beans and fresh, natural ingredients in every drink we make.</p>
-          </SubTexts>
+    <StyledSection style={{ backgroundColor }}>
+      <motion.div style={{ opacity }}>
+        <h1>Taste The Difference</h1>
+        <Content>
+          <Image src={DummyDrink} priority alt="Frappe Drink" className="main-img" />
+          <FeaturedDrinks>
+            <SubTexts>
+              <p>We believe that great coffee starts with great ingredients. </p>
+              <p>That&apos;s why we use only the finest, locally sourced beans and fresh, natural ingredients in every drink we make.</p>
+            </SubTexts>
 
-          <Card tranparent>
-            <Drinks>
-              <Drink>
-                <Image src={DarkChoco} priority alt="Dark Choco Frappe" />
-                <h6>Dark Choco</h6>
-              </Drink>
-              <Drink>
-                <Image src={Mocha} priority alt="Dark Choco Frappe" />
-                <h6>Mocha</h6>
-              </Drink>
-              <Drink>
-                <Image src={WhiteChoco} priority alt="Dark Choco Frappe" />
-                <h6>White Choco</h6>
-              </Drink>
-            </Drinks>
+            <Card >
+              <Drinks>
+                <Drink>
+                  <Image src={DarkChoco} priority alt="Dark Choco Frappe" />
+                  <h6>Dark Choco</h6>
+                </Drink>
+                <Drink>
+                  <Image src={Mocha} priority alt="Dark Choco Frappe" />
+                  <h6>Mocha</h6>
+                </Drink>
+                <Drink>
+                  <Image src={WhiteChoco} priority alt="Dark Choco Frappe" />
+                  <h6>White Choco</h6>
+                </Drink>
+              </Drinks>
 
-            <Link href={GRIND_AND_BLEND_MESSENGER_URL} target='_blank' className='order-link'><Button>Order now!</Button></Link>
+              <Link href={GRIND_AND_BLEND_MESSENGER_URL} target='_blank' className='order-link'><Button>Order now!</Button></Link>
 
-          </Card>
-        </FeaturedDrinks>
-      </Content>
+            </Card>
+          </FeaturedDrinks>
+        </Content>
+      </motion.div>
     </StyledSection>
   )
 }
 
-const StyledSection = styled.section({
+const StyledSection = styled(motion.section)({
+  position: 'relative',
   padding: '0 6dvw 38px 6dvw',
   h1: {
     fontSize: "clamp(60px, 4rem,80px)",

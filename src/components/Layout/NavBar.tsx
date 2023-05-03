@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import { useScroll, motion, useTransform } from "framer-motion";
 
 import styled from '@emotion/styled';
 import Image from 'next/image';
@@ -24,6 +25,8 @@ const NAV_ROUTES = [
 
 
 const NavBar = (props: Props) => {
+    const { scrollYProgress } = useScroll()
+    const backgroundColor = useTransform(scrollYProgress, [0, 0.1, 1], ['rgba(245, 222, 179,0)', 'rgba(245, 222, 179,0.8)', 'rgba(245, 222, 179,1)'])
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const handleOverlayClick = () => {
@@ -35,14 +38,11 @@ const NavBar = (props: Props) => {
     }
 
     return (
-        <StyledNavBar>
-
-
-
+        <StyledNavBar style={{ backgroundColor }}>
             <DesktopNavMenu>
                 {
                     NAV_ROUTES.map((route, index) => (
-                        <DesktopNavItem key={route.NAME + index}>
+                        <DesktopNavItem key={route.NAME + index} >
                             <Link href={route.PATH}>
                                 {route.NAME}
                             </Link>
@@ -50,10 +50,8 @@ const NavBar = (props: Props) => {
                     ))
                 }
             </DesktopNavMenu>
-
             <BurgerMenu>
                 <Image src={Burger} alt="Burger Menu" onClick={handleBurgerClick} />
-
                 <Overlay className={isMenuOpen ? 'isMenuOpen' : ''} onClick={handleOverlayClick} />
                 <MobileNavMenu className={isMenuOpen ? 'isMenuOpen' : ''}>
                     {
@@ -72,13 +70,12 @@ const NavBar = (props: Props) => {
                 <Image priority src={Logo} alt="Grind and Blend Logo" />
                 <h1>Grind & Blend</h1>
             </Link>
-
         </StyledNavBar>
     )
 }
 
 
-const StyledNavBar = styled.nav({
+const StyledNavBar = styled(motion.nav)({
     position: 'fixed',
     display: 'grid',
     backgroundColor: 'var(--secondary-color)',
@@ -87,8 +84,8 @@ const StyledNavBar = styled.nav({
     padding: "0 6dvw",
     gridTemplateColumns: '1fr 1fr',
     justifyContent: 'space-between',
-    boxShadow: '0px 4px 4px rgba(var(--accent-color-rgb), 0.45)',
     zIndex: 999,
+    transition: 'transform 500ms ease-in-out',
 
     "a.home-logo": {
         display: 'flex',
@@ -143,7 +140,7 @@ const StyledNavBar = styled.nav({
 
 })
 
-const DesktopNavMenu = styled.div({
+const DesktopNavMenu = styled(motion.div)({
     display: 'flex',
     justifyContent: 'start',
     alignItems: 'center',
@@ -154,7 +151,7 @@ const DesktopNavMenu = styled.div({
     },
 })
 
-const DesktopNavItem = styled.div({
+const DesktopNavItem = styled(motion.div)({
     fontSize: NAV_FONT_SIZE,
     fontWeight: 800,
     letterSpacing: '1px',
