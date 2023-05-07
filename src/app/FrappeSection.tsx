@@ -18,11 +18,11 @@ const GRIND_AND_BLEND_MESSENGER_URL = "https://www.messenger.com/t/1038659757990
 
 const FrappeSection = () => {
   const { scrollYProgress } = useScroll()
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
+  // const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
   const backgroundColor = useTransform(scrollYProgress, [0, 1], ['rgba(245, 222, 179,0)', 'rgba(245, 222, 179,1)'])
   return (
     <StyledSection style={{ backgroundColor }}>
-      <motion.div style={{ opacity }}>
+      <motion.div>
         <h1>Taste The Difference</h1>
         <Content>
           <Image src={DummyDrink} priority alt="Frappe Drink" className="main-img" />

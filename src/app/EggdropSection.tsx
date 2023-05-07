@@ -16,11 +16,8 @@ import MQ from '@constants/media_queries';
 const GRIND_AND_BLEND_MESSENGER_URL = "https://www.messenger.com/t/103865975799079";
 
 const EggdropSection = () => {
-  const { scrollYProgress } = useScroll()
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
-
   return (
-    <StyledSection style={{ opacity }}>
+    <StyledSection>
       <h2>Experience Eggdrop Perfection</h2>
       <p>Find out why everyone&apos;s talking about this game-changing dish!</p>
       <SandwichContainer>
