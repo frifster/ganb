@@ -32,4 +32,6 @@
 body {
   position: relative;
   height: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }

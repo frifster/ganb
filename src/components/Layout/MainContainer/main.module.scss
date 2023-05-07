@@ -1,8 +1,8 @@
 .main {
     padding-top: clamp(60px, 6dvh, 91px);
-    min-height: 92dvh;
+    // min-height: 92dvh;
 
-    @media (width <= 375) {
-        min-height: 86dvh;
-    }
+    // @media (width <= 375) {
+    //     min-height: 86dvh;
+    // }
 }
