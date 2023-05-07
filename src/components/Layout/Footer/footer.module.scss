@@ -1,0 +1,72 @@
+@import "@assets/styles/mixins.scss";
+
+.footer {
+    background-color: var(--accent-color);
+    width: 100%;
+    height: clamp(60px, 6dvh, 91px);
+    padding: 0 6dvw;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    box-shadow: 0px -4px 4px rgba(var(--accent-color-rgb), 0.45);
+    display: grid;
+
+    @media (width <= 600px) {
+        height: auto;
+        grid-template-columns: 1fr;
+        padding: 2dvh 6dvw;
+        gap: 2dvh;
+    }
+}
+
+.socials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    max-width: 200px;
+    cursor: pointer;
+    align-content: center;
+    justify-items: space-between;
+
+    img {
+        height: clamp(20px, 2dvh, 60px);
+        width: auto;
+    }
+
+    @media (width <= 600px) {
+        justify-self: center;
+        padding-bottom: 2dvh;
+        border-bottom: 1px dashed var(--secondary-color);
+    }
+}
+
+.footer_menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2dvw;
+
+    @media (width <= 600px) {
+        justify-content: center;
+    }
+}
+
+.footer_menu_item {
+    font-size: clamp(12px, 1.5dvmin, 18px);
+    font-weight: 600;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+    --color: var(--secondary-color);
+
+    &:after {
+       @extend %underline-styles;
+    }
+
+    &:hover {
+        &:after {
+            @extend %active-underline-styles;
+        }
+    }
+}

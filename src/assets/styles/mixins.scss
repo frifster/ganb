@@ -1,0 +1,19 @@
+%underline-styles {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 80%;
+    left: 10%;
+    height: 4px;
+    margin: 0 auto;
+    background-color: var(--color);
+    border-radius: 99px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+%active-underline-styles {
+    transform: scaleX(1);
+    transform-origin: left;
+}
