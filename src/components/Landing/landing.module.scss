@@ -8,9 +8,14 @@
     margin: 53px auto 23px auto;
 }
 
+$section-min-height: calc(100vh - 38px);
+
 .frappe_section {
     position: relative;
     padding: 0 6dvw 38px 6dvw;
+    min-height: $section-min-height;
+    display: grid;
+    align-content: center;
 
     h1 {
         font-size: clamp(60px, 4rem, 80px);
@@ -18,10 +23,16 @@
         max-width: 1200px;
     }
 
-    @media (width <= 768px) {
+    @media (width <= 992px) {
         h1 {
             text-align: center;
             font-size: clamp(40px, 4rem, 60px);
+        }
+    }
+
+    @media (width <= 768px) {
+        h1 {
+            font-size: clamp(35px, 3.5rem, 55px);
         }
     }
 
@@ -91,7 +102,10 @@
 
 .eggdrop_section {
     background-color: #f5deb3;
-    padding: 54px 6dvw 100px 6dvw;
+    padding: 54px 6dvw 38px 6dvw;
+    display: grid;
+    align-content: center;
+    min-height: $section-min-height;
 
     h2 {
         font-size: 48px;
