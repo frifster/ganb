@@ -31,7 +31,7 @@ const EggdropSection = () => {
             </div>
           </div>
 
-          <Link href={GRIND_AND_BLEND_MESSENGER_URL} target='_blank' className={styles.order_link}> <Button>Order now!aa </Button></Link>
+          <Link href={GRIND_AND_BLEND_MESSENGER_URL} target='_blank' className={styles.order_link}> <Button>Order now!</Button></Link>
 
         </Card>
         <Image src={DummySandwich} priority alt="Eggdrop" className={styles.eggdrop_image} />

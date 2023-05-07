@@ -8,6 +8,87 @@
     margin: 53px auto 23px auto;
 }
 
+.frappe_section {
+    position: relative;
+    padding: 0 6dvw 38px 6dvw;
+
+    h1 {
+        font-size: clamp(60px, 4rem, 80px);
+        margin: 0 auto 38px auto;
+        max-width: 1200px;
+    }
+
+    @media (width <= 768px) {
+        h1 {
+            text-align: center;
+            font-size: clamp(40px, 4rem, 60px);
+        }
+    }
+
+    @media (width <= 600px) {
+        h1 {
+            font-size: clamp(30px, 3rem, 50px);
+        }
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 54px;
+        padding-bottom: 54px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
+
+        img {
+            align-self: end;
+        }
+
+        @media (width <= 768px) {
+            grid-template-columns: auto;
+            .main_image {
+                display: none;
+            }
+        }
+    }
+
+
+    .featured_drinks {
+        max-width: 879px;
+        
+        .subtexts {
+            text-align: center;
+            margin-bottom: 71px;
+        }
+
+        .drinks {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 38px;
+
+            @media (width <= 600px) {
+                grid-template-columns: 1fr;
+            }
+
+            .drink {
+                h6 {
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                
+                @media  (width <= 600px) {
+                    justify-self: center;
+                }
+            }
+        }
+
+        .order_link {
+            @extend %order_link;
+        }
+    }
+}
+
 .eggdrop_section {
     background-color: #f5deb3;
     padding: 54px 6dvw 100px 6dvw;
