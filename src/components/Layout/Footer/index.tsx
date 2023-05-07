@@ -6,7 +6,6 @@ import Link from 'next/link';
 import FB from '@assets/svgs/socials/fb.svg';
 import Instagram from '@assets/svgs/socials/instagram.svg';
 import TikTok from '@assets/svgs/socials/tiktok.svg';
-import { NAV_FONT_SIZE, underlineStyles, underlineStylesActive } from '@constants/styles';
 import styles from './footer.module.scss';
 
 const FOOTER_ROUTES = [
