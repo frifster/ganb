@@ -1,0 +1,175 @@
+@import "@assets/styles/mixins.scss";
+
+.navbar {
+    position: fixed;
+    display: grid;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: clamp(60px, 6dvh, 91px);
+    padding: 0 6dvw;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    z-index: 999;
+    transition: transform 500ms ease-in-out;
+
+    a.home_logo {
+        display: flex;
+        position: relative;
+        justify-self: end;
+
+        img {
+            height: clamp(20px, 2dvh, 60px);
+            align-self: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-left: 10px;
+            white-space: nowrap;
+            font-weight: 700;
+            align-self: center;
+        }
+    }
+
+    @media (width <= 1440px) {
+        a.home_logo {
+            h1 {
+                font-size: 28px;
+            }
+        }
+    }
+
+    @media (width <= 1280px) {
+        a.home_logo {
+            h1 {
+                font-size: 24px;
+            }
+        }
+    }
+
+    @media (width <= 1024px) {
+        a.home_logo {
+            h1 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media (width <= 375px) {
+        a.home_logo {
+            h1 {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.desktop_nav_menu {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2dvw;
+
+    @media (width <= 600px) {
+        display: none;
+    }
+}
+
+.desktop_nav_menu_item {
+    font-size: clamp(12px, 1.5dvmin, 18px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    --color: var(--accent-color);
+
+    &:after {
+        @extend %underline-styles;
+    }
+ 
+    &:hover {
+        &:after {
+            @extend %active-underline-styles;
+        }
+    }
+}
+
+
+.mobile_nav_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    box-shadow: -4px 0px 4px rgba(var(--accent-color-rgb), 0.45);
+    overflow: hidden;
+    touch-action: none;
+    z-index: 9999;
+    padding: 30px 20px;
+    transform: translateX(105%);
+    transition: transform 0.3s ease-in-out;
+
+    &.isMenuOpen {
+        transform: translateX(0%);
+    }
+}
+
+.burger_menu {
+    display: none;
+    align-self: center;
+    justify-self: start;
+    cursor: pointer;
+
+    @media (width <= 600px) {
+        display: block;
+    }
+}
+
+.overlay {
+    display: block;
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 0;
+    transform: translateX(105%);
+    transition: opacity 0.3s ease-in-out 0.3s;
+    opacity: 0;
+
+    &.isMenuOpen {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.mobile_nav_menu_item {
+    font-size: clamp(12px, 1.5dvmin, 18px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-bottom: 20px;
+
+    &:hover, &:focus, &:active {
+        a {
+            position: relative;
+        }
+        & a:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 60%;
+            height: 4px;
+            margin: 0 auto;
+            background-color: var(--accent-color);
+            border-radius: 99px;
+        }
+    }
+}
