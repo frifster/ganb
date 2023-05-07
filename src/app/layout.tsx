@@ -4,9 +4,9 @@ import { Inter } from 'next/font/google'
 
 import NavBar from '@components/Layout/NavBar'
 import Footer from '@components/Layout/Footer';
-import LayoutContainer from "@components/Layout/LayoutContainer";
 
 import './globals.css'
+import MainContainer from "@components/Layout/MainContainer";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,9 +29,9 @@ export default function RootLayout(props: RootLayoutProps) {
       <body className={inter.className}>
         <Analytics />
         <NavBar />
-        <LayoutContainer>
+        <MainContainer>
           {props.children}
-        </LayoutContainer>
+        </MainContainer>
         <Footer />
       </body>
     </html>
