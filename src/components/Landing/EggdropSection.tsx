@@ -14,8 +14,6 @@ const GRIND_AND_BLEND_MESSENGER_URL =
   process.env.NEXT_PUBLIC_GRIND_AND_BLEND_MESSENGER_URL || "";
 
 const EggdropSection = () => {
-
-
   return (
     <section className={styles.eggdrop_section}>
       <h2>Experience Eggdrop Perfection</h2>
