@@ -1,8 +1,10 @@
-import NotFound from "@components/Shared/NotFound";
+import styles from './menu.module.scss';
 
 const Menu = () => {
     return (
-        <NotFound />
+        <div className={styles.menu} >
+            <h1>Menu</h1>
+        </div>
     )
 }
 
