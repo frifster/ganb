@@ -1,162 +1,72 @@
 %order_link {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    justify-self: center;
-    max-height: 40px;
-    margin: 53px auto 23px auto;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  justify-self: center;
+  max-height: 40px;
+  margin: 53px auto 23px auto;
 }
 
 $section-min-height: calc(100vh - 38px);
 
-.frappe_section {
-    position: relative;
-    padding: 0 6dvw 38px 6dvw;
-    min-height: $section-min-height;
+.eggdrop_section {
+  background-color: #f5deb3;
+  padding: 54px 6dvw 38px 6dvw;
+  display: grid;
+  align-content: center;
+  min-height: $section-min-height;
+
+  h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .sandwich_container {
     display: grid;
-    align-content: center;
+    grid-template-columns: auto 1fr;
+    margin: 100px auto 0 auto;
+    max-width: 1200px;
+    gap: 122px;
 
-    h1 {
-        font-size: clamp(60px, 4rem, 80px);
-        margin: 0 auto 38px auto;
-        max-width: 1200px;
+    .order_link {
+      @extend %order_link;
     }
 
-    @media (width <= 992px) {
-        h1 {
-            text-align: center;
-            font-size: clamp(40px, 4rem, 60px);
-        }
-    }
+    @media (width <= 1024px) {
+      grid-template-columns: auto;
 
-    @media (width <= 768px) {
-        h1 {
-            font-size: clamp(35px, 3.5rem, 55px);
-        }
+      .eggdrop_image {
+        display: none;
+      }
     }
+  }
+
+  .sandwiches {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 38px;
 
     @media (width <= 600px) {
-        h1 {
-            font-size: clamp(30px, 3rem, 50px);
-        }
+      grid-template-columns: 1fr;
     }
 
-    .content {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 54px;
-        padding-bottom: 54px;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 1200px;
-
-        img {
-            align-self: end;
-        }
-
-        @media (width <= 768px) {
-            grid-template-columns: auto;
-            .main_image {
-                display: none;
-            }
-        }
-    }
-
-
-    .featured_drinks {
-        max-width: 879px;
-        
-        .subtexts {
-            text-align: center;
-            margin-bottom: 71px;
-        }
-
-        .drinks {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 38px;
-
-            @media (width <= 600px) {
-                grid-template-columns: 1fr;
-            }
-
-            .drink {
-                h6 {
-                    text-align: center;
-                    font-size: 18px;
-                    font-weight: bold;
-                }
-                
-                @media  (width <= 600px) {
-                    justify-self: center;
-                }
-            }
-        }
-
-        .order_link {
-            @extend %order_link;
-        }
-    }
-}
-
-.eggdrop_section {
-    background-color: #f5deb3;
-    padding: 54px 6dvw 38px 6dvw;
-    display: grid;
-    align-content: center;
-    min-height: $section-min-height;
-
-    h2 {
-        font-size: 48px;
+    .sandwich {
+      h6 {
         text-align: center;
-        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      @media (width <= 1024px) {
+        justify-self: center;
+      }
     }
-
-    p {
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .sandwich_container {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        margin: 100px auto 0 auto;
-        max-width: 1200px;
-        gap: 122px;
-
-        .order_link {
-            @extend %order_link;
-        }
-
-        @media (width <= 1024px) {
-            grid-template-columns: auto;
-
-            .eggdrop_image {
-                display: none;
-            }
-        }
-    }
-
-    .sandwiches {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 38px;
-
-        @media (width <= 600px) {
-            grid-template-columns: 1fr;
-        }
-
-        .sandwich {
-            h6 {
-                text-align: center;
-                font-size: 18px;
-                font-weight: bold;
-            }
-            
-            @media  (width <= 1024px) {
-                justify-self: center;
-            }
-        }
-    }
+  }
 }
