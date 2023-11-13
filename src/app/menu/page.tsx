@@ -1,7 +1,7 @@
 "use client";
 import HotMenuImg from "@assets/images/hotmenu.png";
 import MatchaImg from "@assets/images/matcha.png";
-import MenuImg from "@assets/images/menu.png";
+import MenuImg from "@assets/images/newmenu.png";
 import PerfectComboImg from "@assets/images/perfectcombo.png";
 import SuperComboImg from "@assets/images/supercombo.jpg";
 import Image from "next/image";
