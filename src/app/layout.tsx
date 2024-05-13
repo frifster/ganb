@@ -1,39 +1,43 @@
-import Head from "next/head"
-import { Analytics } from '@vercel/analytics/react';
-import { Inter } from 'next/font/google'
+import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "@components/Layout/Footer";
 
-import NavBar from '@components/Layout/NavBar'
-import Footer from '@components/Layout/Footer';
-
-import './globals.css'
+import "./globals.css";
 import MainContainer from "@components/Layout/MainContainer";
 
-const inter = Inter({ subsets: ['latin'] })
+import NavBar from "@components/Layout/NavBar";
+import { Analytics } from "@vercel/analytics/react";
+import { Inter } from "next/font/google";
+import Head from "next/head";
+import { ReactNode } from "react";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Grind & Blend',
-  description: 'Grind and Blend website',
-}
+  title: "Grind & Blend",
+  description: "Grind and Blend website"
+};
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: ReactNode;
 }
 
 export default function RootLayout(props: RootLayoutProps) {
 
   return (
-    <html lang="en">
+    <ClerkProvider>
+      <html lang="en">
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <body className={inter.className}>
-        <Analytics />
-        <NavBar />
-        <MainContainer>
-          {props.children}
-        </MainContainer>
-        <Footer />
+      <Analytics />
+      <NavBar />
+      <MainContainer>
+        {props.children}
+      </MainContainer>
+      <Footer />
       </body>
-    </html>
-  )
+      </html>
+    </ClerkProvider>
+  );
 }
