@@ -1,4 +1,4 @@
-# Grind and Blend Project [![Build Status](https://travis-ci.com/Grind-and-Blend/grind-and-blend.svg?branch=main)](https://travis-ci.com/Grind-and-Blend/grind-and-blend)
+# Grind and Blend Project
 
 This project was developed with [Node.js](https://nodejs.org/), [React](https://reactjs.org/),
 and [TypeScript](https://www.typescriptlang.org/).
