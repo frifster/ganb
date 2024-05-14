@@ -41,7 +41,7 @@ const NavBar = () => {
   return (
     <motion.nav style={{ backgroundColor }} className={styles.navbar}>
       <div className={styles.desktop_nav_menu}>
-        <div>
+        <div className={styles.desktop_nav_menu_item}>
           <SignedIn>
             <UserButton />
           </SignedIn>
