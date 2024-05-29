@@ -5,9 +5,9 @@ and [TypeScript](https://www.typescriptlang.org/).
 
 ## Dependencies
 
-- React version: 18.3.1
+- React version: 19.0.0-rc-6f23540c7d-20240528
 - TypeScript version: 5.4.5
-- Next.js version: 14.2.3
+- Next.js version: 15.0.0-rc.0
 - Tailwind CSS version: 3.4.3
 - Sass version: 1.77.1
 - Clerk version: 5.0.8
